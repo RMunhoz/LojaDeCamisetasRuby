@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
-<body>
-
-	<%= nav_bar brand: "Kunstee", brand_link: root_url %>
-
 	<table class="table table-bordered">
 		<thead>
 			<tr>
@@ -24,6 +14,12 @@
 				<td><%= produto.descricao %></td>
 				<td><%= produto.quantidade %></td>
 				<td><%= produto.preco %></td>
+				<td>
+					<%= button_to "Delete", produto, 
+						method: :delete,
+						class: "btn btn-danger", 
+						data: {confirm: "Confirma a exclusão de: #{produto.nome}?"} %>
+				</td>
 			</tr>
 			<% end %>
 		</tbody>
@@ -50,5 +46,5 @@
 			<% end %>
 		</tbody>
 	</table>
-</body>
-</html>
+
+	<%= link_to "Novo Produto", new_produto_path, class: "btn btn-primary" %>
