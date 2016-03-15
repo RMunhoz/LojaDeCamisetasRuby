@@ -1,0 +1,16 @@
+<tr>
+	<td><%= produto.nome %></td>
+	<td><%= produto.descricao %></td>
+	<td><%= produto.preco %></td>
+	<td>
+		<%= button_to "Delete", produto, 
+			method: :delete,
+			class: "btn btn-danger", 
+			data: {confirm: "Confirma a exclusão de: #{produto.nome}?"} %>
+	</td>
+	<td>
+		<%= link_to "editar", edit_produto_path(produto), 
+			method: :get,
+			class: "btn btn-default" %>
+	</td>
+</tr>
